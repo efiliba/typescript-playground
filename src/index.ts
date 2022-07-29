@@ -1,11 +1,13 @@
-interface Person {
-  name: string;
-  age?: number;
-}
+import type {Equal, Expect} from '@type-challenges/utils';
 
-const newPerson = ({name, age}: Person) => {
-  console.log(`${name}: ${age}`);
-};
+type Union = 'a' | 'b' | (string extends string ? 'c' : never);
 
-newPerson({name: 'Eli', age: 50});
-newPerson({name: 'Leslie'});
+type cases = [Expect<Equal<Union, 'a' | 'b' | 'c'>>];
+
+// type Test<T extends any[]> = T extends [infer First, string] ? First : never;
+
+// type Result = Test<['a', 'b']>;
+
+// type Test2<T extends any[]> = T extends [infer First, ...any[]] ? First : never;
+
+// type Result2 = Test2<['a', 'b']>;

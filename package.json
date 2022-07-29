@@ -1,0 +1,11 @@
+{
+  "name": "typescript-playground",
+  "version": "0.0.0",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "tsc && node index"
+  },
+  "dependencies": {
+    "typescript": "^4.7.4"
+  }
+}

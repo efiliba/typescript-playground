@@ -3,7 +3,7 @@ type Push<T extends any[], V> = [...T, V];
 type PushResult = Push<[1], 'a'>; // [1, "a"]
 
 // Convert a number N into a tuple of length N
-type NTuple<N extends number, T extends any[] = []> = T['length'] extends N ? T : NTuple<N, Push<T, any>>;
+type NTuple<N extends number, T extends any[] = []> = N extends T['length'] ? T : NTuple<N, Push<T, any>>;
 
 type NTupleResult = NTuple<3>; // [any, any, any]
 

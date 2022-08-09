@@ -7,6 +7,7 @@
       "error", {
         "code": 120
       }
-    ]
+    ],
+    "@typescript-eslint/prefer-ts-expect-error": "off"
   }
 }

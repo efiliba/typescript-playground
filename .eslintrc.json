@@ -1,5 +1,5 @@
 {
-  "extends": "./node_modules/gts/",
+  "extends": ["./node_modules/gts/", "prettier"],
   "rules": {
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-unused-vars": "off",

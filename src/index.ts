@@ -1,13 +1,11 @@
-import type {Equal, Expect} from '@type-challenges/utils';
+// unknown extends `any` is true; unknown extends `any[]` is false
+type ToArray<T = []> = unknown extends T ? [T] : T extends any[] ? T : [T];
 
-type Union = 'a' | 'b' | (string extends string ? 'c' : never);
+type Push2<T, A> = [...ToArray<T>, ...ToArray<A>];
 
-type cases = [Expect<Equal<Union, 'a' | 'b' | 'c'>>];
+type P1 = Push2<[], 5>; // [5]
+type P2 = Push2<2, 5>; // [2, 3]
+type P3 = Push2<[], 5>; //
+type P4 = Push2<[], 5>; //
 
-// type Test<T extends any[]> = T extends [infer First, string] ? First : never;
-
-// type Result = Test<['a', 'b']>;
-
-// type Test2<T extends any[]> = T extends [infer First, ...any[]] ? First : never;
-
-// type Result2 = Test2<['a', 'b']>;
+// type NTuple<N>

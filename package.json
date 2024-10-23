@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "tsc src/higher_order_function.ts && node src/higher_order_function.js",
+    "dev": "tsc src/optional_payload.ts && node src/optional_payload.js",
     "start": "tsc && node build/src/index",
     "build": "tsc",
     "watch": "tsc -w",
